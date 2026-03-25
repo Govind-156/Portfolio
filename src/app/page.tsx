@@ -115,6 +115,45 @@ const internships = [
   },
 ];
 
+const certificates = [
+  {
+    title: "Python FullStack",
+    issuer: "Ayud Software",
+    year: "2024",
+    credentialUrl: "https://drive.google.com/file/d/1Mex_sQ7HdHRukTOlWBEadGLsRbns71Bd/view?usp=drive_link",
+  },
+  {
+    title: "Parvam Hackethon",
+    issuer: "Parvam Consultancy",
+    year: "2024",
+    credentialUrl: "https://drive.google.com/file/d/1WAMqZjlz8SO8kDq4ZQjwPyusZc9SBZrr/view?usp=drive_link",
+  },
+  {
+    title: "Ideathon",
+    issuer: "College Event",
+    year: "2024",
+    credentialUrl: "https://drive.google.com/file/d/1QShGDPvGU1YH56XwOoHyX-ArXBsUVrLm/view?usp=drive_link",
+  },
+  {
+    title: "Infosys Certified Program",
+    issuer: "Infosys",
+    year: "2024",
+    credentialUrl: "#",
+  },
+  {
+    title: "Deloitte Certification",
+    issuer: "Deloitte",
+    year: "2024",
+    credentialUrl: "https://drive.google.com/file/d/16gMCvGYFdP-wj9twwgSpRW9SFTirOsVB/view?usp=sharing",
+  },
+  {
+    title: "NPTEL Certified Course",
+    issuer: "NPTEL",
+    year: "2024",
+    credentialUrl: "#",
+  },
+];
+
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [activeSection, setActiveSection] = useState("hero");
@@ -129,7 +168,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["hero", "about", "experience", "projects", "contact"];
+      const sections = ["hero", "about", "experience", "certificates", "projects", "contact"];
       const scrollPosition = window.scrollY + window.innerHeight / 3;
 
       for (const section of sections) {
@@ -172,7 +211,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="hidden md:flex items-center gap-8"
           >
-            {["About", "Experience", "Projects", "Contact"].map((item) => (
+            {["About", "Experience", "Certificates", "Projects", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -374,6 +413,52 @@ export default function Home() {
                   ))}
                 </div>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="certificates" className="relative py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-[#ff5e3a] font-mono text-sm mb-4 tracking-wider">CREDENTIALS</p>
+            <h2 className="text-4xl md:text-5xl font-bold">
+              Professional <span className="gradient-text">Certificates</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certificates.map((certificate, index) => (
+              <motion.a
+                key={certificate.title}
+                href={certificate.credentialUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.12 }}
+                viewport={{ once: true }}
+                className="group glass-card rounded-2xl p-6 hover:scale-[1.02] transition-all duration-300"
+              >
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h3 className="text-lg font-bold group-hover:text-[#ff5e3a] transition-colors">
+                    {certificate.title}
+                  </h3>
+                  <ExternalLink className="w-4 h-4 text-[#8888a0] group-hover:text-[#14b8a6] transition-colors" />
+                </div>
+                <p className="text-muted-foreground text-sm mb-2">
+                  {certificate.issuer}
+                </p>
+                <span className="text-xs font-mono px-3 py-1 bg-secondary rounded-full text-muted-foreground">
+                  {certificate.year}
+                </span>
+              </motion.a>
             ))}
           </div>
         </div>
