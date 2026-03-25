@@ -135,22 +135,10 @@ const certificates = [
     credentialUrl: "https://drive.google.com/file/d/1QShGDPvGU1YH56XwOoHyX-ArXBsUVrLm/view?usp=drive_link",
   },
   {
-    title: "Infosys Certified Program",
-    issuer: "Infosys",
-    year: "2024",
-    credentialUrl: "#",
-  },
-  {
     title: "Deloitte Certification",
     issuer: "Deloitte",
     year: "2024",
     credentialUrl: "https://drive.google.com/file/d/16gMCvGYFdP-wj9twwgSpRW9SFTirOsVB/view?usp=sharing",
-  },
-  {
-    title: "NPTEL Certified Course",
-    issuer: "NPTEL",
-    year: "2024",
-    credentialUrl: "#",
   },
 ];
 
