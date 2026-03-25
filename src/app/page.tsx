@@ -593,7 +593,7 @@ export default function Home() {
 
             <div className="flex items-center justify-center gap-6">
               {[
-                { icon: Github, href: "https://github.com/Rakgovind", label: "GitHub" },
+                { icon: Github, href: "https://github.com/Govind-156", label: "GitHub" },
                 { icon: Linkedin, href: "https://linkedin.com/in/rg1516", label: "LinkedIn" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
